@@ -1,0 +1,37 @@
+<div class="medium-5 medium-centered columns auth-form transparent">
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div class="row">
+      <div class="medium-12 medium-centered columns">
+        <span class="form-label"><%= f.label :name %></span><br>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 medium-centered columns">
+        <span class="form-label"><%= f.label :full_name %></span><br>
+        <%= f.text_field :full_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 medium-centered columns">
+        <span class="form-label"><%= f.label :password %></span><br>
+        <%= f.password_field :password %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 medium-centered columns">
+        <span class="form-label"><%= f.label :password_confirmation %></span><br>
+        <%= f.password_field :password_confirmation %><br>
+        <%= f.submit 'Signup', class: "button success expand" %>
+      </div>
+    </div>
+  <% end %>
+</div>

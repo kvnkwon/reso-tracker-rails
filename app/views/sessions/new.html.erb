@@ -1,0 +1,17 @@
+<div class="medium-5 medium-centered columns auth-form transparent">
+  <%= form_for(:session, url: sessions_path) do |f| %>
+    <div class="row">
+      <div class="medium-12 medium-centered columns">
+        <span class="form-label"><%= f.label :name %></span><br>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 medium-centered columns">
+        <span class="form-label"><%= f.label :password %></span><br>
+        <%= f.password_field :password %><br>
+        <%= f.submit 'Login', class: "button success expand" %>
+      </div>
+    </div>
+  <% end %>
+</div>
